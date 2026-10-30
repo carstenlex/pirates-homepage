@@ -75,3 +75,13 @@ summaryLength = 30
   name = "News"
   pageRef = "news"
   weight = 30
+
+[[menu.footer]]
+  name = "Impressum"
+  pageRef = "impressum"
+  weight = 10
+
+[[menu.footer]]
+  name = "Datenschutz"
+  pageRef = "datenschutz"
+  weight = 20

@@ -44,6 +44,10 @@ In der erzeugten Datei `draft: true` auf `draft: false` ändern (oder die Zeile 
 
 Titel und Beschreibung der Seite stehen zentral in `hugo.toml`.
 
+## Impressum und Datenschutz
+
+Die Texte stehen in `content/impressum.md` und `content/datenschutz.md` (das Datum in der Zeile „Stand“ von Hand anpassen). Die Links im Seitenfuss kommen aus den Einträgen `[[menu.footer]]` in `hugo.toml`. Das Hauptmenü bleibt davon unberührt. Die Texte sind Entwürfe und müssen vom Verein geprüft werden. Wird die Seite um Funktionen erweitert (Analytics, Formulare, eingebettete Medien), muss die Datenschutzerklärung angepasst werden.
+
 ## Hugo-Version
 
 **Hugo extended 0.167.0** – festgelegt an genau einer Stelle: `HUGO_VERSION` in `.github/workflows/hugo.yml`. Lokal dieselbe Version verwenden, z. B. unter Windows:
