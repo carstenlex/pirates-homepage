@@ -48,7 +48,7 @@ jobs:
 
       - name: Check output
         run: |
-          for f in public/index.html public/about/index.html public/news/index.html; do
+          for f in public/index.html public/about/index.html public/news/index.html public/impressum/index.html public/datenschutz/index.html; do
             test -f "$f" || { echo "Missing expected file: $f"; exit 1; }
           done
 
