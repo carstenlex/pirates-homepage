@@ -13,9 +13,10 @@ summaryLength = 30
 
 [params]
   description = "Pirates Basketball"
-  colorScheme = "blowfish"
-  defaultAppearance = "light"
-  autoSwitchAppearance = true
+  colorScheme = "pirates"
+  defaultAppearance = "dark"
+  autoSwitchAppearance = false
+  logo = "img/logo-pirates-white-clear.png"
   enableSearch = false
   enableCodeCopy = false
 
