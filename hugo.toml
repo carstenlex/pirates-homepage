@@ -1,0 +1,76 @@
+baseURL = "https://carstenlex.github.io/pirates-homepage/"
+locale = "de-DE"
+defaultContentLanguage = "de"
+title = "Pirates Basketball"
+theme = "blowfish"
+disableLanguages = ["en"]
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "Homepage der Pirates Basketball"
+  colorScheme = "blowfish"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = false
+  enableCodeCopy = false
+
+  [params.header]
+    layout = "basic"
+
+  [params.footer]
+    showCopyright = false
+    showThemeAttribution = false
+    showAppearanceSwitcher = false
+    showScrollToTop = true
+
+  [params.homepage]
+    layout = "hero"
+    showRecent = true
+    showRecentItems = 3
+    showMoreLink = true
+    showMoreLinkDest = "/news/"
+
+  [params.article]
+    showDate = true
+    showReadingTime = false
+    showTableOfContents = false
+    showAuthor = false
+    showBreadcrumbs = false
+    showPagination = false
+    showWordCount = false
+    showTaxonomies = false
+    showEdit = false
+    showHero = false
+    showSummary = true
+    showViews = false
+    showLikes = false
+
+  [params.list]
+    showBreadcrumbs = false
+    showSummary = true
+    showCards = false
+    groupByYear = false
+    cardView = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[menu.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Über uns"
+  pageRef = "about"
+  weight = 20
+
+[[menu.main]]
+  name = "News"
+  pageRef = "news"
+  weight = 30

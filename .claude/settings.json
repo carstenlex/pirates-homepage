@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo:*)",
+      "Bash(git log:*)",
+      "Bash(git remote -v)",
+      "Bash(git show:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:)",
+      "Bash(mvn:*)",
+      "Write(docs/*)",
+      " ! git submodule add https://github.com/adityatelange/hugo-PaperMod themes/PaperMod && git -C themes/PaperMod checkout v8.0 "
+    ],
+    "ask": [
+      "Bash(rm:*)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.mcp.json)"
+    ]
+  },
+  "spinnerTipsEnabled": false,
+  "prefersReducedMotion": false,
+  "enabledPlugins": {}
+}
