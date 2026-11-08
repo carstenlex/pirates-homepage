@@ -26,3 +26,74 @@ header .main-menu {
 h1, h2, h3 {
   letter-spacing: 0.01em;
 }
+
+/* Trainingszeiten tables */
+.trainingszeiten-section {
+  margin-bottom: 2rem;
+}
+.trainingszeiten-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.trainingszeiten-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.trainingszeiten-table th {
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(var(--color-primary-500));
+  color: rgb(var(--color-neutral));
+  font-weight: 700;
+}
+.trainingszeiten-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(var(--color-neutral-500), 0.5);
+  vertical-align: top;
+}
+.trainingszeiten-note {
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Trainingszeiten: Kartenansicht auf schmalen Bildschirmen */
+@media (max-width: 639.98px) {
+  .trainingszeiten-table,
+  .trainingszeiten-table tbody,
+  .trainingszeiten-table tr,
+  .trainingszeiten-table td {
+    display: block;
+  }
+  .trainingszeiten-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .trainingszeiten-table tr {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(var(--color-neutral-500), 0.5);
+    border-radius: 0.5rem;
+  }
+  .trainingszeiten-table td {
+    padding: 0.125rem 0;
+    border-bottom: none;
+  }
+  .trainingszeiten-table td[data-label="Tag"],
+  .trainingszeiten-table td[data-label="Zeit"] {
+    display: inline;
+    font-weight: 700;
+  }
+  .trainingszeiten-table td[data-label="Tag"]::after {
+    content: " \00b7 ";
+  }
+  .trainingszeiten-table td[data-label="Ort"]::before {
+    content: attr(data-label) ": ";
+    font-size: 0.875em;
+    opacity: 0.8;
+  }
+}

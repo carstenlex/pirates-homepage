@@ -1,0 +1,30 @@
+{{ with hugo.Data.trainingszeiten }}
+  <div class="trainingszeiten mx-auto max-w-7xl px-6 py-8">
+    {{ range .tabellen }}
+      <section{{ with .id }} id="{{ . }}"{{ end }} class="trainingszeiten-section">
+        <h2 class="trainingszeiten-title">{{ .titel }}</h2>
+        <table class="trainingszeiten-table" role="table">
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">Tag</th>
+              <th scope="col" role="columnheader">Zeit</th>
+              <th scope="col" role="columnheader">Team/Trainer</th>
+              <th scope="col" role="columnheader">Ort</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            {{ range .zeilen }}
+              <tr role="row">
+                <td role="cell" data-label="Tag">{{ .tag }}</td>
+                <td role="cell" data-label="Zeit">{{ .zeit }}</td>
+                <td role="cell" data-label="Team/Trainer">{{ .team }}</td>
+                <td role="cell" data-label="Ort">{{ .ort }}</td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+        {{ with .hinweis }}<p class="trainingszeiten-note">{{ . }}</p>{{ end }}
+      </section>
+    {{ end }}
+  </div>
+{{ end }}

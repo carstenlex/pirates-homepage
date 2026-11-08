@@ -48,6 +48,28 @@ Titel und Beschreibung der Seite stehen zentral in `hugo.toml`.
 
 Die Texte stehen in `content/impressum.md` und `content/datenschutz.md` (das Datum in der Zeile „Stand“ von Hand anpassen). Die Links im Seitenfuss kommen aus den Einträgen `[[menu.footer]]` in `hugo.toml`. Das Hauptmenü bleibt davon unberührt. Die Texte sind Entwürfe und müssen vom Verein geprüft werden. Wird die Seite um Funktionen erweitert (Analytics, Formulare, eingebettete Medien), muss die Datenschutzerklärung angepasst werden.
 
+## Trainingszeiten pflegen
+
+Die Trainingszeiten auf der Startseite stehen in `data/trainingszeiten.yaml`. Das Layout muss dafür nicht angepasst werden. Aufbau:
+
+```yaml
+tabellen:
+  - titel: "Trainingszeiten Saison 2026/2027"
+    id: training            # optional: Anker, erreichbar über /#training
+    zeilen:
+      - { tag: "Mo", zeit: "17:00–18:30", team: "U12 mit Olivier", ort: "Säntishalle, Arbon" }
+  - titel: "Amriswil – Trainingszeiten"
+    zeilen: [...]
+    hinweis: "In den Schulferien finden keine offiziellen Trainings statt."   # optional: Absatz unter der Tabelle
+```
+
+- **Zeile ändern oder hinzufügen:** Eintrag in `zeilen` anpassen bzw. ergänzen (Felder `tag`, `zeit`, `team`, `ort`). Zeiten mit Halbgeviertstrich schreiben (`17:00–18:30`). Die Reihenfolge der Datei ist die Reihenfolge auf der Seite.
+- **Neue Saison:** `titel` anpassen (z. B. „Trainingszeiten Saison 2027/2028") und die `zeilen` ersetzen. `id` nur bei der ersten Tabelle setzen, damit der Anker `/#training` erhalten bleibt.
+- **Hinweis:** `hinweis` ist optional. Ohne das Feld wird kein Absatz ausgegeben.
+- Auf dem Handy (unter 640 px) werden die Zeilen automatisch als Karten dargestellt.
+
+**Layout-Override:** Die Tabellen werden über `layouts/index.html` (Kopie von `themes/blowfish/layouts/index.html` plus eine Zeile für das Partial `layouts/partials/trainingszeiten.html`) zwischen Hero und letzten News eingefügt. Bei jedem Update des Themes Blowfish muss `layouts/index.html` mit dem Original im Theme verglichen und Änderungen müssen übernommen werden.
+
 ## Hugo-Version
 
 **Hugo extended 0.167.0** – festgelegt an genau einer Stelle: `HUGO_VERSION` in `.github/workflows/hugo.yml`. Lokal dieselbe Version verwenden, z. B. unter Windows:
