@@ -1,0 +1,14 @@
+saentishalle:
+  { name: "Säntishalle", strasse: "Thomas-Bornhauserstrasse 14", plz: "9320", ort: "Arbon" }
+seegarten:
+  { name: "Seegarten Turnhalle", strasse: "Romanshornerstrasse 84", plz: "9320", ort: "Arbon" }
+reben4:
+  { name: "Reben 4 Turnhalle", strasse: "Rebenstrasse 4", plz: "9320", ort: "Arbon" }
+abc-stacherholz:
+  { name: "ABC-Sporthalle Stacherholz", strasse: "Stacherholzstrasse 38", plz: "9320", ort: "Arbon" }
+stacherholz-unten:
+  { name: "Stacherholz (unten)", strasse: "Stacherholzstrasse 34", plz: "9320", ort: "Arbon" }
+bergli:
+  { name: "Bergli", strasse: "Römerstrasse 15", plz: "9320", ort: "Arbon" }
+freiestrasse:
+  { name: "Turnhalle Freiestrasse", strasse: "Freiestrasse 32", plz: "8580", ort: "Amriswil" }

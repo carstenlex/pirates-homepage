@@ -2,25 +2,25 @@ tabellen:
   - titel: "Trainingszeiten Saison 2026/2027"
     id: training
     zeilen:
-      - { tag: "Mo", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", ort: "Säntishalle, Arbon" }
-      - { tag: "Mo", zeit: "18:30–20:00", team: "U16 Mädchen / Training bei Hürriyet Celiksap (Jahrgänge ab 2011–2015)", ort: "Säntishalle, Arbon" }
-      - { tag: "Mo", zeit: "20:15–22:00", team: "4. Liga Herren", ort: "Seegarten Turnhalle, Arbon" }
-      - { tag: "Di", zeit: "17:30–19:00", team: "U14 Jungs bei Ali Kilic und Miodrag Cvetkovic (Jahrgänge 2013/2014)", ort: "Reben 4 Turnhalle, Arbon" }
-      - { tag: "Di", zeit: "18:45–20:15", team: "U18 Jungs / Training bei Claudio (Jahrgänge 2009/2010)", ort: "Seegarten Turnhalle, Arbon" }
-      - { tag: "Di", zeit: "20:15–21:45", team: "U22 Mädchen bei Georg", ort: "Seegarten" }
-      - { tag: "Mi", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", ort: "Seegarten Turnhalle, Arbon" }
-      - { tag: "Mi", zeit: "18:30–20:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", ort: "Seegarten, Arbon" }
-      - { tag: "Mi", zeit: "20:15–22:00", team: "4. Liga Herren", ort: "Seegarten Turnhalle, Arbon" }
-      - { tag: "Mi", zeit: "20:15–21:45", team: "Just4Fun / Veteranen / Plausch bei Georg", ort: "ABC-Sporthalle Stacherholz, Arbon" }
-      - { tag: "Do", zeit: "20:30–21:45", team: "U18 Jungs / Training bei Carsten (Jahrgänge 2009/2010)", ort: "ABC Sporthalle Stacherholz, Arbon" }
-      - { tag: "Do", zeit: "20:30–21:45", team: "U22 Mädchen bei Georg", ort: "ABC Sporthalle Stacherholz, Arbon" }
-      - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", ort: "Reben 4 Turnhalle, Arbon" }
-      - { tag: "Fr", zeit: "17:30–19:00", team: "U14 Jungs / Training bei Ali und Mio (Jahrgänge 2013/2014)", ort: "Bergli" }
-      - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Mädchen bei Hürriyet (Jahrgänge 2011/2012/2013/2014)", ort: "Untere Stacherholz, Arbon" }
-      - { tag: "Sa", zeit: "09:30–10:30", team: "Basketballschule U8 mit Olivier (Jahrgänge 2019–2020)", ort: "Seegarten Turnhalle, Arbon" }
-      - { tag: "Sa", zeit: "10:30–12:00", team: "Basketballschule U10 mit Olivier (Jahrgänge 2017–2018)", ort: "Seegarten, Arbon" }
+      - { tag: "Mo", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", halle: saentishalle }
+      - { tag: "Mo", zeit: "18:30–20:00", team: "U16 Mädchen / Training bei Hürriyet Celiksap (Jahrgänge ab 2011–2015)", halle: saentishalle }
+      - { tag: "Mo", zeit: "20:15–22:00", team: "4. Liga Herren", halle: seegarten }
+      - { tag: "Di", zeit: "17:30–19:00", team: "U14 Jungs bei Ali Kilic und Miodrag Cvetkovic (Jahrgänge 2013/2014)", halle: reben4 }
+      - { tag: "Di", zeit: "18:45–20:15", team: "U18 Jungs / Training bei Claudio (Jahrgänge 2009/2010)", halle: seegarten }
+      - { tag: "Di", zeit: "20:15–21:45", team: "U22 Mädchen bei Georg", halle: seegarten }
+      - { tag: "Mi", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", halle: seegarten }
+      - { tag: "Mi", zeit: "18:30–20:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", halle: seegarten }
+      - { tag: "Mi", zeit: "20:15–22:00", team: "4. Liga Herren", halle: seegarten }
+      - { tag: "Mi", zeit: "20:15–21:45", team: "Just4Fun / Veteranen / Plausch bei Georg", halle: abc-stacherholz }
+      - { tag: "Do", zeit: "20:30–21:45", team: "U18 Jungs / Training bei Carsten (Jahrgänge 2009/2010)", halle: abc-stacherholz }
+      - { tag: "Do", zeit: "20:30–21:45", team: "U22 Mädchen bei Georg", halle: abc-stacherholz }
+      - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", halle: reben4 }
+      - { tag: "Fr", zeit: "17:30–19:00", team: "U14 Jungs / Training bei Ali und Mio (Jahrgänge 2013/2014)", halle: bergli }
+      - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Mädchen bei Hürriyet (Jahrgänge 2011/2012/2013/2014)", halle: stacherholz-unten }
+      - { tag: "Sa", zeit: "09:30–10:30", team: "Basketballschule U8 mit Olivier (Jahrgänge 2019–2020)", halle: seegarten }
+      - { tag: "Sa", zeit: "10:30–12:00", team: "Basketballschule U10 mit Olivier (Jahrgänge 2017–2018)", halle: seegarten }
   - titel: "Amriswil – Trainingszeiten"
     zeilen:
-      - { tag: "Mi", zeit: "16:30–17:45", team: "U12 Amriswil / Training bei Manuel", ort: "Turnhalle Freiestrasse, Amriswil" }
-      - { tag: "Mi", zeit: "17:45–19:00", team: "U14 Amriswil / Training bei Manuel", ort: "Turnhalle Freiestrasse, Amriswil" }
+      - { tag: "Mi", zeit: "16:30–17:45", team: "U12 Amriswil / Training bei Manuel", halle: freiestrasse }
+      - { tag: "Mi", zeit: "17:45–19:00", team: "U14 Amriswil / Training bei Manuel", halle: freiestrasse }
     hinweis: "In den Schulferien finden keine offiziellen Trainings statt."

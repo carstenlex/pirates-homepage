@@ -14,11 +14,13 @@
           </thead>
           <tbody role="rowgroup">
             {{ range .zeilen }}
+              {{ $halle := index hugo.Data.hallen .halle }}
+              {{ if not $halle }}{{ errorf "trainingszeiten: unbekannter Hallen-Schluessel %q (siehe data/hallen.yaml)" .halle }}{{ end }}
               <tr role="row">
                 <td role="cell" data-label="Tag">{{ .tag }}</td>
                 <td role="cell" data-label="Zeit">{{ .zeit }}</td>
                 <td role="cell" data-label="Team/Trainer">{{ .team }}</td>
-                <td role="cell" data-label="Ort">{{ .ort }}</td>
+                <td role="cell" data-label="Ort"><a href="https://www.google.com/maps/search/?api=1&amp;query={{ printf "%s, %s %s" $halle.strasse $halle.plz $halle.ort | urlquery }}" target="_blank" rel="noreferrer">{{ $halle.name }}, {{ $halle.ort }}</a></td>
               </tr>
             {{ end }}
           </tbody>

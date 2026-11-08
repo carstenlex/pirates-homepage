@@ -52,6 +52,10 @@ h1, h2, h3 {
   border-bottom: 1px solid rgba(var(--color-neutral-500), 0.5);
   vertical-align: top;
 }
+.trainingszeiten-table td a {
+  color: inherit;
+  text-decoration: underline;
+}
 .trainingszeiten-note {
   margin-top: 0.75rem;
   font-style: italic;

@@ -19,6 +19,10 @@ Diese Website verwendet keine Cookies, kein Tracking und keine Analyse-Dienste. 
 
 Die Website wird bei GitHub Pages gehostet. Anbieter ist GitHub, Inc. (ein Unternehmen von Microsoft) in den USA. Beim Aufruf einer Seite erfasst der Hosting-Anbieter technische Daten in Server-Logdateien, darunter Ihre IP-Adresse, Datum und Uhrzeit des Aufrufs, die aufgerufene Seite und Angaben zu Ihrem Browser. Diese Daten können in den USA verarbeitet werden. Wir selbst haben keinen Zugriff auf diese Logdateien und werten sie nicht aus.
 
+### Links zu Google Maps
+
+Die Adressen der Trainingshallen auf der Kontaktseite und in der Trainingstabelle sind auf Google Maps verlinkt. Beim blossen Aufruf unserer Website werden keine Daten an Google übertragen. Erst mit dem Klick auf einen Link öffnet sich Google Maps, und es gelten die Datenschutzbestimmungen von Google.
+
 ### Ihre Rechte
 
 Nach dem Schweizer Datenschutzgesetz (revDSG) haben Sie das Recht auf Auskunft über Ihre Personendaten sowie auf Berichtigung und Löschung. Wenden Sie sich dafür an info@pirates-basketball.ch.
@@ -27,4 +31,4 @@ Nach dem Schweizer Datenschutzgesetz (revDSG) haben Sie das Recht auf Auskunft �
 
 Diese Erklärung wird angepasst, wenn sich die Website ändert, zum Beispiel wenn neue Funktionen hinzukommen.
 
-Stand: 30.10.2026
+Stand: 08.11.2026
