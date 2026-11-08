@@ -115,3 +115,27 @@ body::before {
   background: var(--watermark-url) center / contain no-repeat;
   opacity: var(--watermark-opacity);
 }
+
+/* Kopfzeile: Logo und Titel
+   Faktoren hier anpassen: 1 = Theme-Vorgabe (Logo 5rem, Titel 1rem). */
+:root {
+  --header-logo-scale: 1.5;
+  --header-title-scale: 1.25;
+}
+header .main-menu img.logo {
+  max-height: calc(5rem * var(--header-logo-scale));
+  max-width: calc(5rem * var(--header-logo-scale));
+}
+header .main-menu a.truncate {
+  font-size: calc(1rem * var(--header-title-scale));
+  line-height: 1.5;
+}
+/* Schmale Bildschirme: Titel bleibt einzeilig (truncate), Logo etwas kleiner,
+   damit Logo, Titel und Menue-Knopf in einer Zeile bleiben. */
+@media (max-width: 639.98px) {
+  header .main-menu img.logo {
+    max-height: calc(5rem * (var(--header-logo-scale) + 1) / 2);
+    max-width: calc(5rem * (var(--header-logo-scale) + 1) / 2);
+  }
+}
+/* Ende Kopfzeile */

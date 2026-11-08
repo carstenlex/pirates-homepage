@@ -71,9 +71,15 @@ summaryLength = 30
   pageRef = "about"
   weight = 20
 
+# News vorübergehend ausgeblendet (Seite /news/ bleibt gebaut). Zum Wiedereinschalten einkommentieren.
+# [[menu.main]]
+#   name = "News"
+#   pageRef = "news"
+#   weight = 40
+
 [[menu.main]]
-  name = "News"
-  pageRef = "news"
+  name = "Kontakt"
+  pageRef = "kontakt"
   weight = 30
 
 [[menu.footer]]
