@@ -1,6 +1,7 @@
 ---
 title: "Datenschutz"
 url: /datenschutz/
+showDate: false
 ---
 
 ## Datenschutzerklärung

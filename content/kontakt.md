@@ -1,6 +1,7 @@
 ---
 title: "Kontakt"
 url: /kontakt/
+showDate: false
 ---
 
 ## Vereinsadresse
