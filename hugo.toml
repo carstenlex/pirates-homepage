@@ -19,6 +19,7 @@ summaryLength = 30
   logo = "img/logo-pirates-white-clear.png"
   enableSearch = false
   enableCodeCopy = false
+  spielterminFeed = "https://calendar.google.com/calendar/ical/k9638oppgo52acvljql7f1piss%40group.calendar.google.com/public/basic.ics"
 
   [params.header]
     layout = "basic"

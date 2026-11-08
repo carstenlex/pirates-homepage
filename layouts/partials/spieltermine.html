@@ -1,0 +1,111 @@
+{{- /* Spieltermine aus dem oeffentlichen Google-Calendar-ICS-Feed, abgerufen beim Build. */ -}}
+{{ $url := site.Params.spielterminFeed }}
+{{ $loc := "Europe/Zurich" }}
+{{ $zloc := (time.AsTime "2000-01-01" $loc).Location }}
+{{ $wochentage := slice "So" "Mo" "Di" "Mi" "Do" "Fr" "Sa" }}
+
+{{ $heute := now.In $zloc }}
+{{ with site.Params.spielterminHeute }}{{ $heute = time.AsTime . $loc }}{{ end }}
+{{ $start := time.AsTime ($heute.Format "2006-01-02") $loc }}
+{{ $ende := $start.AddDate 0 2 0 }}
+
+{{ $fehler := false }}
+{{ $events := slice }}
+
+{{ if not $url }}
+  {{ $fehler = true }}
+  {{ warnidf "spieltermine" "spieltermine: Parameter spielterminFeed ist nicht gesetzt" }}
+{{ else }}
+  {{ $res := try (resources.GetRemote $url) }}
+  {{ if $res.Err }}
+    {{ $fehler = true }}
+    {{ warnidf "spieltermine" "spieltermine: Kalender nicht erreichbar (%s)" $res.Err }}
+  {{ else if not $res.Value }}
+    {{ $fehler = true }}
+    {{ warnidf "spieltermine" "spieltermine: Kalender nicht gefunden (%s)" $url }}
+  {{ else }}
+    {{ $ics := replace (replace (replace (replace $res.Value.Content "\r\n" "\n") "\r" "") "\n " "") "\n\t" "" }}
+    {{ range after 1 (split $ics "BEGIN:VEVENT") }}
+      {{ $dtstart := "" }}
+      {{ $dtend := "" }}
+      {{ $summary := "" }}
+      {{ $location := "" }}
+      {{ range split (index (split . "END:VEVENT") 0) "\n" }}
+        {{ $name := index (findRE "^[^:;]*" .) 0 }}
+        {{ $val := replaceRE "^[^:]*:" "" . }}
+        {{ if eq $name "DTSTART" }}
+          {{ $dtstart = $val }}
+        {{ else if eq $name "DTEND" }}
+          {{ $dtend = $val }}
+        {{ else if eq $name "SUMMARY" }}
+          {{ $summary = $val }}
+        {{ else if eq $name "LOCATION" }}
+          {{ $location = $val }}
+        {{ end }}
+      {{ end }}
+      {{ $dt := false }}
+      {{ $letzter := false }}
+      {{ $ganztag := false }}
+      {{ $key := 0 }}
+      {{ $zeigen := false }}
+      {{ if and (eq (len $dtstart) 16) (hasSuffix $dtstart "Z") }}
+        {{ $iso := printf "%s-%s-%sT%s:%s:%sZ" (substr $dtstart 0 4) (substr $dtstart 4 2) (substr $dtstart 6 2) (substr $dtstart 9 2) (substr $dtstart 11 2) (substr $dtstart 13 2) }}
+        {{ $dt = (time.AsTime $iso).In ($zloc) }}
+        {{ $key = add (mul $dt.Unix 2) 1 }}
+        {{ $zeigen = and (ge $dt.Unix $start.Unix) (lt $dt.Unix $ende.Unix) }}
+      {{ else if eq (len $dtstart) 8 }}
+        {{ $ganztag = true }}
+        {{ $dt = time.AsTime (printf "%s-%s-%s" (substr $dtstart 0 4) (substr $dtstart 4 2) (substr $dtstart 6 2)) $loc }}
+        {{ $endExkl := $dt.AddDate 0 0 1 }}
+        {{ if eq (len $dtend) 8 }}
+          {{ $endExkl = time.AsTime (printf "%s-%s-%s" (substr $dtend 0 4) (substr $dtend 4 2) (substr $dtend 6 2)) $loc }}
+        {{ end }}
+        {{ $letzter = $endExkl.AddDate 0 0 -1 }}
+        {{ if lt $letzter.Unix $dt.Unix }}{{ $letzter = $dt }}{{ end }}
+        {{ $key = mul $dt.Unix 2 }}
+        {{ $zeigen = and (lt $dt.Unix $ende.Unix) (ge $letzter.Unix $start.Unix) }}
+      {{ end }}
+      {{ if $zeigen }}
+        {{ $titel := $summary }}
+        {{ $ort := $location }}
+        {{ range slice (slice `\\` "\u0001") (slice `\,` ",") (slice `\;` ";") (slice `\n` " ") (slice `\N` " ") (slice "\u0001" `\`) }}
+          {{ $titel = replace $titel (index . 0) (index . 1) }}
+          {{ $ort = replace $ort (index . 0) (index . 1) }}
+        {{ end }}
+        {{ $events = $events | append (dict "key" $key "dt" $dt "letzter" $letzter "ganztag" $ganztag "titel" $titel "ort" $ort) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="trainingszeiten spieltermine mx-auto max-w-7xl px-6 py-8">
+  <section id="spieltermine" class="trainingszeiten-section">
+    <h2 class="trainingszeiten-title">Nächste Spiele</h2>
+    {{ if $fehler }}
+      <p class="trainingszeiten-note">Die Spieltermine sind zurzeit nicht verfügbar.</p>
+    {{ else if not $events }}
+      <p class="trainingszeiten-note">Zurzeit sind keine Spiele eingetragen.</p>
+    {{ else }}
+      <table class="trainingszeiten-table spieltermine-table" role="table">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th scope="col" role="columnheader">Datum</th>
+            <th scope="col" role="columnheader">Zeit</th>
+            <th scope="col" role="columnheader">Spiel</th>
+            <th scope="col" role="columnheader">Ort</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          {{ range sort $events "key" }}
+            <tr role="row">
+              <td role="cell" data-label="Datum">{{ index $wochentage (int .dt.Weekday) }}, {{ .dt.Format "02.01.2006" }}{{ if and .ganztag (gt .letzter.Unix .dt.Unix) }} – {{ index $wochentage (int .letzter.Weekday) }}, {{ .letzter.Format "02.01.2006" }}{{ end }}</td>
+              <td role="cell" data-label="Zeit">{{ if .ganztag }}ganztägig{{ else }}{{ .dt.Format "15:04" }}{{ end }}</td>
+              <td role="cell" data-label="Spiel">{{ .titel }}</td>
+              <td role="cell" data-label="Ort">{{ with .ort }}<a href="https://www.google.com/maps/search/?api=1&amp;query={{ . | urlquery }}" target="_blank" rel="noreferrer">{{ . }}</a>{{ end }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    {{ end }}
+  </section>
+</div>

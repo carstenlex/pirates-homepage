@@ -88,11 +88,16 @@ h1, h2, h3 {
     border-bottom: none;
   }
   .trainingszeiten-table td[data-label="Tag"],
+  .trainingszeiten-table td[data-label="Datum"],
   .trainingszeiten-table td[data-label="Zeit"] {
     display: inline;
     font-weight: 700;
   }
-  .trainingszeiten-table td[data-label="Tag"]::after {
+  .trainingszeiten-table td[data-label="Spiel"] {
+    overflow-wrap: anywhere;
+  }
+  .trainingszeiten-table td[data-label="Tag"]::after,
+  .trainingszeiten-table td[data-label="Datum"]::after {
     content: " \00b7 ";
   }
   .trainingszeiten-table td[data-label="Ort"]::before {
