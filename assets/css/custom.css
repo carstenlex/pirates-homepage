@@ -97,3 +97,21 @@ h1, h2, h3 {
     opacity: 0.8;
   }
 }
+
+/* Wasserzeichen: Pirates-Logo fixiert, zentriert und dezent hinter dem Inhalt.
+   Die Logo-URL (--watermark-url) setzt layouts/partials/extend-head.html. */
+:root {
+  --watermark-opacity: 0.06;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 90vw;
+  height: 70vh;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--watermark-url) center / contain no-repeat;
+  opacity: var(--watermark-opacity);
+}
