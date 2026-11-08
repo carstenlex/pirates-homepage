@@ -31,7 +31,7 @@ summaryLength = 30
 
   [params.homepage]
     layout = "hero"
-    showRecent = true
+    showRecent = false
     showRecentItems = 3
     showMoreLink = true
     showMoreLinkDest = "/news/"

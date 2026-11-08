@@ -1,6 +1,7 @@
 ---
 title: "Impressum"
 url: /impressum/
+showDate: false
 ---
 
 ## Betreiber dieser Website

@@ -1,6 +1,7 @@
 ---
 title: "Über uns"
 url: /about/
+showDate: false
 ---
 
 Ihr habt Lust auf die coolste Sportart der Welt ?? Kommt zu den Pirates in Arbon und Amriswil
