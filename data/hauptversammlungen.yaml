@@ -1,0 +1,11 @@
+# Hauptversammlungen, neueste zuerst.
+# Neue HV: Zeile oben ergaenzen und PDF unter static/dokumente/ ablegen.
+zeilen:
+  - { nummer: 9, datum: "2026", protokoll: hv-09-2026-protokoll.pdf }
+  - { nummer: 8, datum: "2025", protokoll: hv-08-2025-protokoll.pdf }
+  - { nummer: 7, datum: "2024", protokoll: hv-07-2024-protokoll.pdf }
+  - { nummer: 6, datum: "2023", protokoll: hv-06-2023-protokoll.pdf }
+  - { nummer: 5, datum: "2022", protokoll: hv-05-2022-protokoll.pdf }
+  - { nummer: 4, datum: "30.06.2021", protokoll: hv-04-2021-protokoll.pdf }
+  - { nummer: 3, datum: "26.06.2020", protokoll: hv-03-2020-protokoll.pdf }
+  - { nummer: 2, datum: "08.05.2019", protokoll: hv-02-2019-protokoll.pdf }

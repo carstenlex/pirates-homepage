@@ -1,0 +1,28 @@
+{{ with hugo.Data.beitraege }}
+  {{ $logo := resources.Get .kulturlegi_logo }}
+  {{ if not $logo }}{{ errorf "beitraege: Kultur-Legi-Logo %q nicht gefunden (Ablage unter assets/)" .kulturlegi_logo }}{{ end }}
+  <section class="beitraege" aria-labelledby="beitraege-titel">
+    <h2 id="beitraege-titel" class="beitraege-title">Mitgliedsbeiträge</h2>
+    {{ range .einleitung }}<p class="beitraege-intro">{{ . }}</p>{{ end }}
+    <table class="beitraege-table" role="table">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader">Team</th>
+          <th scope="col" role="columnheader">Jahrgänge</th>
+          <th scope="col" role="columnheader">Beitrag in CHF</th>
+          <th scope="col" role="columnheader"><img class="beitraege-logo" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="Kultur-Legi"></th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {{ range .zeilen }}
+          <tr role="row">
+            <th scope="row" role="rowheader" data-label="Team">{{ .team }}</th>
+            <td role="cell" data-label="Jahrgänge">{{ with .jahrgaenge }}{{ . }}{{ else }}–{{ end }}</td>
+            <td role="cell" data-label="Beitrag">CHF {{ .beitrag }}</td>
+            <td role="cell" data-label="Kultur-Legi">CHF {{ .beitrag_kulturlegi }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </section>
+{{ end }}

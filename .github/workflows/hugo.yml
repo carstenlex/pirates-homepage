@@ -38,6 +38,9 @@ jobs:
       - name: Hero smoke test
         run: bash scripts/check-hero.sh
 
+      - name: Ueber-uns check
+        run: bash scripts/check-ueber-uns.sh
+
       - name: Configure Pages
         id: pages
         if: github.event_name != 'pull_request'

@@ -1,0 +1,10 @@
+# Vereinsfuehrung der Pirates. Fotos liegen unter assets/img/vorstand/ (Querformat oder quadratisch, mind. 300 x 300 px; wird quadratisch zugeschnitten).
+- name: Carsten Lex
+  funktion: Präsident
+  foto: img/vorstand/carsten-lex.jpg
+- name: Hürriyet Celiksap
+  funktion: Finanzen
+  foto: img/vorstand/huerriyet-celiksap.jpg
+- name: Claudio Cioce
+  funktion: J+S Coach
+  foto: img/vorstand/claudio-cioce.jpg

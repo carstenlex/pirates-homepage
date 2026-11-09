@@ -1,0 +1,18 @@
+{{ with hugo.Data.vorstand }}
+  <section class="vorstand" aria-labelledby="vorstand-titel">
+    <h2 id="vorstand-titel" class="vorstand-title">Vereinsführung</h2>
+    <ul class="vorstand-grid">
+      {{ range . }}
+        {{ $bild := resources.Get .foto }}
+        {{ if not $bild }}{{ errorf "vorstand: Foto %q fuer %q nicht gefunden (Ablage unter assets/)" .foto .name }}{{ else }}
+        {{ $bild = $bild.Fill "300x300 Center q85" }}
+        <li class="vorstand-card">
+          <img class="vorstand-foto" src="{{ $bild.RelPermalink }}" width="{{ $bild.Width }}" height="{{ $bild.Height }}" alt="{{ .name }}" loading="lazy">
+          <p class="vorstand-name">{{ .name }}</p>
+          <p class="vorstand-funktion">{{ .funktion }}</p>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

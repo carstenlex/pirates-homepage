@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article>
+    <header id="single_header" class="mt-5 max-w-prose">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
+    </header>
+    <div class="ueber-uns mt-6 mb-20">
+      {{/* Reihenfolge: Vereinsfuehrung, Markdown-Inhalt (Wir stehen fuer), Beitraege, Hauptversammlungen */}}
+      {{ partial "vorstand.html" . }}
+      <section class="prose dark:prose-invert max-w-prose">
+        {{ .Content }}
+      </section>
+      {{ partial "beitraege.html" . }}
+      {{ partial "hauptversammlungen.html" . }}
+    </div>
+  </article>
+{{ end }}

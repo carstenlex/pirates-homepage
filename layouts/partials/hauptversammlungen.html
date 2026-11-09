@@ -1,0 +1,27 @@
+{{ with hugo.Data.hauptversammlungen }}
+  <section class="beitraege hauptversammlungen" aria-labelledby="hv-titel">
+    <h2 id="hv-titel" class="beitraege-title">Hauptversammlungen</h2>
+    <table class="beitraege-table" role="table">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader">HV</th>
+          <th scope="col" role="columnheader">Datum</th>
+          <th scope="col" role="columnheader">Protokoll</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {{ range $i, $z := .zeilen }}
+          {{ $pfad := printf "static/dokumente/%s" $z.protokoll }}
+          {{ if not (and $z.protokoll (fileExists $pfad)) }}
+            {{ errorf "hauptversammlungen: Zeile %d (%v. HV): Protokolldatei %q nicht gefunden (erwartet unter %s)" (add $i 1) $z.nummer $z.protokoll $pfad }}
+          {{ end }}
+          <tr role="row">
+            <th scope="row" role="rowheader" data-label="HV">{{ $z.nummer }}. HV</th>
+            <td role="cell" data-label="Datum">{{ $z.datum }}</td>
+            <td role="cell" data-label="Protokoll"><a href="/dokumente/{{ $z.protokoll }}" download>Protokoll {{ $z.nummer }}. HV {{ $z.datum }} herunterladen (PDF)</a></td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </section>
+{{ end }}

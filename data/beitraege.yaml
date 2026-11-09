@@ -1,0 +1,16 @@
+einleitung:
+  - "Die Mitgliederbeiträge richten sich nach dem Jahrgang und gelten für eine Saison (Juli bis Juni des Folgejahres)."
+  - "Bei einem Clubbeitritt ab Januar wird der halbe Beitrag erhoben. Die Rechnungsstellung erfolgt per E-Mail."
+kulturlegi_logo: img/kulturlegi.png
+zeilen:
+  - { team: "U6", jahrgaenge: "2021 oder später", beitrag: 154, beitrag_kulturlegi: 104 }
+  - { team: "U8", jahrgaenge: "2019/2020", beitrag: 154, beitrag_kulturlegi: 104 }
+  - { team: "U10", jahrgaenge: "2017/2018", beitrag: 184, beitrag_kulturlegi: 119 }
+  - { team: "U12", jahrgaenge: "2015/2016", beitrag: 184, beitrag_kulturlegi: 119 }
+  - { team: "U14", jahrgaenge: "2013/2014", beitrag: 209, beitrag_kulturlegi: 134 }
+  - { team: "U16", jahrgaenge: "2011/2012", beitrag: 254, beitrag_kulturlegi: 169 }
+  - { team: "U18", jahrgaenge: "2009/2010", beitrag: 294, beitrag_kulturlegi: 194 }
+  - { team: "U22", jahrgaenge: "2005–2008", beitrag: 327, beitrag_kulturlegi: 227 }
+  - { team: "Damen", beitrag: 452, beitrag_kulturlegi: 302 }
+  - { team: "Herren", beitrag: 452, beitrag_kulturlegi: 302 }
+  - { team: "Just-for-Fun", beitrag: 120, beitrag_kulturlegi: 60 }
