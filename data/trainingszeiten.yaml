@@ -2,6 +2,7 @@ tabellen:
   - titel: "Trainingszeiten Saison 2026/2027"
     id: training
     zeilen:
+      - { tag: "So", zeit: "11:00–17:30", team: "Terrortraining mit Carsten", halle: seegarten }
       - { tag: "Mo", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", halle: saentishalle }
       - { tag: "Mo", zeit: "18:30–20:00", team: "U16 Mädchen / Training bei Hürriyet Celiksap (Jahrgänge ab 2011–2015)", halle: saentishalle }
       - { tag: "Mo", zeit: "20:15–22:00", team: "4. Liga Herren", halle: seegarten }
