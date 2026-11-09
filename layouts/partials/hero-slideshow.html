@@ -1,0 +1,47 @@
+{{- /* Hero der Startseite. Texte stammen aus content/_index.md (heroHeadline, heroSubline).
+       Fotos: assets/img/hero/*.{jpg,jpeg,png,webp}, alphabetisch nach Dateiname.
+       Ohne Fotos erscheint das Logo als Fallback-Hintergrund; sonst nur in der Kopfzeile. */ -}}
+{{- $photos := sort (resources.Match "img/hero/*.{jpg,jpeg,png,webp}") "Name" -}}
+<section class="hero-slideshow" aria-labelledby="hero-slideshow-title">
+  <div class="hero-slideshow__bg" aria-hidden="true">
+    {{- if $photos }}
+    {{- range $i, $photo := $photos }}
+    {{- $small := $photo.Resize "800x jpg q75" }}
+    {{- $large := $photo.Resize "1920x jpg q75" }}
+    <img class="hero-slideshow__slide{{ if eq $i 0 }} is-active{{ end }}" src="{{ $large.RelPermalink }}" srcset="{{ $small.RelPermalink }} 800w, {{ $large.RelPermalink }} 1920w" sizes="100vw" width="{{ $large.Width }}" height="{{ $large.Height }}" alt="" aria-hidden="true"{{ if eq $i 0 }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
+    {{- end }}
+    {{- else }}
+    {{- with resources.Get "img/logo-pirates-white-clear.png" }}
+    <img class="hero-slideshow__logo" src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">
+    {{- end }}
+    {{- end }}
+  </div>
+  <div class="hero-slideshow__content">
+    <h1 id="hero-slideshow-title" class="hero-slideshow__title">{{ .Params.heroHeadline | default .Title }}</h1>
+    {{- with .Params.heroSubline }}
+    <p class="hero-slideshow__subline">{{ . }}</p>
+    {{- end }}
+    <div class="hero-slideshow__actions">
+      <a class="hero-slideshow__button hero-slideshow__button--primary" href="#training">Probetraining</a>
+      <a class="hero-slideshow__button hero-slideshow__button--secondary" href="#spieltermine">Spieltermine</a>
+    </div>
+  </div>
+</section>
+{{- if gt (len $photos) 1 }}
+<script>
+(function () {
+  var slides = document.querySelectorAll(".hero-slideshow__slide");
+  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var current = 0, timer = null;
+  function next() {
+    slides[current].classList.remove("is-active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("is-active");
+  }
+  function start() { if (!timer) timer = setInterval(next, 6000); }
+  function stop() { clearInterval(timer); timer = null; }
+  document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+  if (!document.hidden) start();
+})();
+</script>
+{{- end }}

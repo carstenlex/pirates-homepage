@@ -35,6 +35,9 @@ jobs:
           sudo dpkg -i "${RUNNER_TEMP}/hugo.deb"
           hugo version
 
+      - name: Hero smoke test
+        run: bash scripts/check-hero.sh
+
       - name: Configure Pages
         id: pages
         if: github.event_name != 'pull_request'

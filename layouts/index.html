@@ -1,14 +1,5 @@
 {{ define "main" }}
-  {{ if .Site.Params.homepage.layoutSwitcher | default false }}
-    {{ partial "home/layout-switcher.html" . }}
-  {{ else }}
-    {{ $partial := print "home/" .Site.Params.homepage.layout ".html" }}
-    {{ if templates.Exists ( printf "partials/%s" $partial ) }}
-      {{ partial $partial . }}
-    {{ else }}
-      {{ partial "home/profile.html" . }}
-    {{ end }}
-  {{ end }}
+  {{ partial "hero-slideshow.html" . }}
   {{ partial "trainingszeiten.html" . }}
   {{ partial "spieltermine.html" . }}
   {{/* News vorübergehend ausgeblendet. Zum Wiedereinschalten diesen Kommentar entfernen:
