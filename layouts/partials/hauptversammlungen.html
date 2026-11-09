@@ -18,7 +18,7 @@
           <tr role="row">
             <th scope="row" role="rowheader" data-label="HV">{{ $z.nummer }}. HV</th>
             <td role="cell" data-label="Datum">{{ $z.datum }}</td>
-            <td role="cell" data-label="Protokoll"><a href="/dokumente/{{ $z.protokoll }}" download>Protokoll {{ $z.nummer }}. HV {{ $z.datum }} herunterladen (PDF)</a></td>
+            <td role="cell" data-label="Protokoll"><a href="{{ printf "dokumente/%s" $z.protokoll | relURL }}" download>Protokoll {{ $z.nummer }}. HV {{ $z.datum }} herunterladen (PDF)</a></td>
           </tr>
         {{ end }}
       </tbody>

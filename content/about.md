@@ -30,4 +30,4 @@ Das BASPO bekennt sich zu den Grundwerten der Ethik-Charta im Sport. Sie wird vo
 9. **Gegen jegliche Form von Korruption.**
    Transparenz bei Entscheidungen und Prozessen fördern und fordern. Den Umgang mit Interessenkonflikten, Geschenken, Finanzen und Wetten regeln und konsequent offenlegen.
 
-<p class="statuten-link"><a href="/dokumente/statuten-2026.pdf" download>Statuten (PDF)</a></p>
+<p class="statuten-link">{{< download "dokumente/statuten-2026.pdf" "Statuten (PDF)" >}}</p>
