@@ -7,13 +7,13 @@ tabellen:
       - { tag: "Mo", zeit: "20:15–22:00", team: "4. Liga Herren", halle: seegarten }
       - { tag: "Di", zeit: "17:30–19:00", team: "U14 Jungs bei Ali Kilic und Miodrag Cvetkovic (Jahrgänge 2013/2014)", halle: reben4 }
       - { tag: "Di", zeit: "18:45–20:15", team: "U18 Jungs / Training bei Claudio (Jahrgänge 2009/2010)", halle: seegarten }
-      - { tag: "Di", zeit: "20:15–21:45", team: "U22 Mädchen bei Georg", halle: seegarten }
+      - { tag: "Di", zeit: "20:15–22:00", team: "U22 Mädchen bei Georg", halle: seegarten }
       - { tag: "Mi", zeit: "17:00–18:30", team: "Basketballschule U12 mit Olivier (Jahrgänge 2015–2016)", halle: seegarten }
       - { tag: "Mi", zeit: "18:30–20:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", halle: seegarten }
       - { tag: "Mi", zeit: "20:15–22:00", team: "4. Liga Herren", halle: seegarten }
       - { tag: "Mi", zeit: "20:15–21:45", team: "Just4Fun / Veteranen / Plausch bei Georg", halle: abc-stacherholz }
-      - { tag: "Do", zeit: "20:30–21:45", team: "U18 Jungs / Training bei Carsten (Jahrgänge 2009/2010)", halle: abc-stacherholz }
-      - { tag: "Do", zeit: "20:30–21:45", team: "U22 Mädchen bei Georg", halle: abc-stacherholz }
+      - { tag: "Do", zeit: "20:30–22:00", team: "U18 Jungs / Training bei Carsten (Jahrgänge 2009/2010)", halle: abc-stacherholz }
+      - { tag: "Do", zeit: "20:30–22:00", team: "U22 Mädchen bei Georg", halle: abc-stacherholz }
       - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Jungs / Training bei Sasa (Jahrgänge 2011/2012)", halle: reben4 }
       - { tag: "Fr", zeit: "17:30–19:00", team: "U14 Jungs / Training bei Ali und Mio (Jahrgänge 2013/2014)", halle: bergli }
       - { tag: "Fr", zeit: "17:30–19:00", team: "U16 Mädchen bei Hürriyet (Jahrgänge 2011/2012/2013/2014)", halle: stacherholz-unten }
